@@ -1,4 +1,4 @@
-# React Native Styling Vejledning ◉‿◉
+# React Native Styling Vejledning
 
 I denne opgave skal du lære om styling i React Native. Vi vil starte med at læse dokumentationen om emnet og derefter klone et givet repository for at undersøge en eksisterende app.
 
@@ -10,7 +10,16 @@ Først skal du læse den nødvendige dokumentation, som vil hjælpe dig med at f
 - [StyleSheet documentation](https://reactnative.dev/docs/stylesheet)
 
 ## Del 2 - Clone Repo
-### Del 2.1 - Clone Repo med Git i terminalen
+### Del 2.1 - Clone Repo ved at downloade fra github
+1. Gå ind på vores github: https://github.com/CBS-INNT
+
+2. Find det ønskede repo
+
+3. Klik på den grønne knap, hvor der står "code" og downloade zipfilen
+
+4. Gem zipfilen et sted og åben den i VSC
+
+### Del 2.2 - Clone Repo med Git i terminalen
 
 Når du har læst dokumentationen, skal du klone det givet repository ned på din computer. Følg nedenstående trin:
 
@@ -29,16 +38,6 @@ Når du har læst dokumentationen, skal du klone det givet repository ned på di
     ```
     cd 04_Styling_vejledning
     ```
-
-### Del 2.2 - Clone Repo ved at downloade fra github
-1. Gå ind på vores github: https://github.com/CBS-INNT
-
-2. Find det ønskede repo
-
-3. Klik på den grønne knap, hvor der står "code" og downloade zipfilen
-
-4. Gem zipfilen et sted og åben den i VSC
-
 
 ## Del 3 - Start App'en
 
@@ -135,10 +134,10 @@ Her skulle du gerne se alle dine filer være <font color="red">røde</font>.
 2. Tjek, at alle filerne fra dit lokale projekt er blevet pushed til dit nye repository.
 
 
-Nu har du klonet det fælles repo og pushet det op til dit eget GitHub repository. Vi er nu klar til at lege med styling! ヾ(⌐■_■)ノ♪
+Nu har du klonet det fælles repo og pushet det op til dit eget GitHub repository. Vi er nu klar til at lege med styling!
 
 
-# Styling med React Native ᶘ ᵒᴥᵒᶅ
+# Styling med React Native
 
 Nu skal vi arbejde med at style appen, så den ser flot ud og har en professionel følelse. Du har allerede fået en del af styles i din **GlobalStyle.js**, men nu skal du opdatere dem for at få appen til at se endnu bedre ud!
 
