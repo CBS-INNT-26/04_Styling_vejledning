@@ -10,7 +10,9 @@ export const GlobalStyle = StyleSheet.create({
     },
 
     // ListScreen
-    itemContainer:{},
+    itemContainer:{
+        // Tilføj styling til itemContainer her
+    },
     infoContainer: {},
     pictureContainer: {},
     contactContainer: {},

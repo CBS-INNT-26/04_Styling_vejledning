@@ -9,7 +9,8 @@ Først skal du læse den nødvendige dokumentation, som vil hjælpe dig med at f
 - [Style documentation](https://reactnative.dev/docs/style)
 - [StyleSheet documentation](https://reactnative.dev/docs/stylesheet)
 
-## Del 2 - Clone Repo med Git
+## Del 2 - Clone Repo
+### Del 2.1 - Clone Repo med Git i terminalen
 
 Når du har læst dokumentationen, skal du klone det givet repository ned på din computer. Følg nedenstående trin:
 
@@ -21,7 +22,7 @@ Når du har læst dokumentationen, skal du klone det givet repository ned på di
 
 3. Brug følgende Git-kommando til at klone repo'et:
     ```
-    git clone https://github.com/Innovationg-og-ny-teknologi-2021/04_Styling_vejledning.git
+    git clone https://github.com/CBS-INNT/04_Styling_vejledning.git
     ```
 
 4. Naviger ind i den klonede mappe:
@@ -29,26 +30,55 @@ Når du har læst dokumentationen, skal du klone det givet repository ned på di
     cd 04_Styling_vejledning
     ```
 
+### Del 2.2 - Clone Repo ved at downloade fra github
+1. Gå ind på vores github: https://github.com/CBS-INNT
+
+2. Find det ønskede repo
+
+3. Klik på den grønne knap, hvor der står "code" og downloade zipfilen
+
+4. Gem zipfilen et sted og åben den i VSC
+
+
 ## Del 3 - Start App'en
 
 Nu skal du starte app'en både på din computer og din mobil, så du kan udforske, hvordan den fungerer og ser ud.
 
 1. Installere de nødvendige pakker med `npm install`. Hvis du er nysgerrig på hvilke pakker der bliver installeret, så kan du se dem i din `package.json` fil under `"dependencies"`. 
+Hvis det ikke virker så installere også følgende:
+    ```
+    npx expo install @react-navigation/native
+    npx expo install @react-navigation/native-stack
+    npx expo install @react-navigation/bottom-tabs
+    npx expo install react-native-screens react-native-safe-area-context react-native-gesture-handler react-native-reanimated react-native-get-random-values
+    ```
 
 2. Start med at køre app'en i udviklingsmiljøet ved at bruge følgende kommando:
     ```
     npx expo start
+    ```
+    Hvis du oplever problemer fordi du fx er på eduroam så kør følgende kommando:
+     ```
+    npx expo start --tunnel
     ```
 
 2. Scan QR-koden med din mobil, eller brug en emulator for at se app'en køre live.
 
 3. Brug lidt tid på at navigere rundt i app'en, og prøv at identificere og eksperimentere med de forskellige stylingelementer der bruges.
 
+
 ## Del 4 - Push det klonet repo til eget GitHub repository
 
 Nu skal du oprette et nyt repository på din egen GitHub-konto, så du kan pushe dine ændringer dertil.
 
-### Step 1 - Opret et nyt repository på GitHub
+### Del 4.1 - Push via Github Desktop
+1. Åben Github Desktop.
+2. Klik på `Current repository` og derefter på `Add` og så på `Add Existing Repository`.
+3. Find din mappe og tilføj den
+4. Klik på `Publish Repository`
+
+### Del 4.2 - Push via terminalen
+#### Step 1 - Opret et nyt repository på GitHub
 
 1. Gå til [GitHub](https://github.com) og log ind på din konto.
 2. Klik på "New" for at oprette et nyt repository.
@@ -56,7 +86,7 @@ Nu skal du oprette et nyt repository på din egen GitHub-konto, så du kan pushe
 4. Sørg for, at det er et **public** eller **private** repository, alt efter hvad du ønsker.
 5. Klik på "Create repository".
 
-### Step 2 - Opdater Git remote for dit lokale projekt
+#### Step 2 - Opdater Git remote for dit lokale projekt
 
 1. Åbn terminalen i din klonede mappe, hvis den ikke allerede er åben:
     ```
@@ -74,7 +104,7 @@ Nu skal du oprette et nyt repository på din egen GitHub-konto, så du kan pushe
     ```
     Dette link finder du på dit nyoprettet repo
 
-### Step 3 - Push til dit nye GitHub repository
+#### Step 3 - Push til dit nye GitHub repository
 
 1. Check om git tracker dine ændringer med : 
 ```
@@ -99,18 +129,20 @@ Her skulle du gerne se alle dine filer være <font color="red">røde</font>.
  git push -u origin main
  ```
 
-### Step 4 - Bekræft ændringer
+#### Step 4 - Bekræft ændringer
 
 1. Gå til dit GitHub repository på [github.com](https://github.com).
 2. Tjek, at alle filerne fra dit lokale projekt er blevet pushed til dit nye repository.
 
-Nu har du klonet det fælles repo og pushet det op til dit eget GitHub repository. Vi nu klar til at lege med styling! ヾ(⌐■_■)ノ♪
+
+Nu har du klonet det fælles repo og pushet det op til dit eget GitHub repository. Vi er nu klar til at lege med styling! ヾ(⌐■_■)ノ♪
+
 
 # Styling med React Native ᶘ ᵒᴥᵒᶅ
 
-Nu skal vi arbejde med at style appen, så den ser godt ud og har en professionel følelse. Du har allerede fået en del af styles i din **GlobalStyle.js**, men nu skal du opdatere dem for at få appen til at se endnu bedre ud!
+Nu skal vi arbejde med at style appen, så den ser flot ud og har en professionel følelse. Du har allerede fået en del af styles i din **GlobalStyle.js**, men nu skal du opdatere dem for at få appen til at se endnu bedre ud!
 
-Når man styler ens app, er det ligesom når du styler resten af dit liv - det ser bare bedre ud når man har et flot farve palet! Et rigtig godt design værktøj man kan bruge til dette er : https://coolors.co/. Gå ind på værktøjet og leg med nogle farve palettes. 
+Når man styler ens app, er det ligesom når du styler resten af dit liv - det ser bare bedre ud når man har en flot farve palet! Et rigtig godt design værktøj man kan bruge til dette er : https://coolors.co/. Gå ind på værktøjet og leg med nogle farve palettes. 
 
 # Styling af din ListScreen
 
@@ -148,38 +180,42 @@ Du har allerede fået en del grundlæggende styles, men nu skal vi opdatere dem,
     buttonContainer: {
         flexDirection: 'row',
     },
+    textContaiter: {},
     itemText: {},
     ```
-    Hvis du kigger i `ListScreen.js` vil du kunne se at de overstående styles er tilknyttet de forskellige elementer af listen som vi nu skal style.
 
-    ***Super tip!*** I VS-code can du Ctrl + click på de forskellige elementer og se hvor de er tilknyttet. Dette fungere også hvis du har funktioner og andet du kalder på. Ved Ctrl + click vil du autmatisk føres til det hvor det element er defineret. 
+    Disse styles er endnu ikke stylet som du kan se ved at {} er tom.
+
+    Hvis du kigger i `ListScreen.js` vil du kunne se at de overstående styles er tilknyttet de forskellige elementer af listen, som vi nu skal style.
+
+    ***Super tip!*** I VS-code can du Ctrl + click på de forskellige elementer og se hvor de er tilknyttet. Dette fungerer også hvis du har funktioner og andet du kalder på. Ved Ctrl + click vil du automatisk føres til det sted, hvor det element er defineret. 
 
 2. **Opgave**: Din opgave er nu at opdatere disse styles for at få appen til at se professionel ud!
 
 ### Opdatering af `itemContainer`
 
-- **Tip**: Vi vil gerne have, at hvert element i din liste ser flot og fremhævet ud. For at gøre dette skal du tilføje en hvid baggrund, afrundede hjørner og skygger for at skabe dybde.
-- **Opgave**: Opdater `itemContainer` ved at tilføje egenskaber som baggrundsfarve, margin, padding, og skygge. Brug også `justifyContent` og `alignItems` til at centrere indholdet.
+- **Opgave**: Vi vil gerne have, at hvert element i din liste ser flot og fremhævet ud. For at gøre dette kan du tilføje en hvid baggrund, afrundede hjørner og skygger for at skabe dybde.
+- **Tip**: Opdater `itemContainer` ved at tilføje egenskaber som baggrundsfarve, margin, padding, og skygge. Brug også `justifyContent` og `alignItems` til at centrere indholdet.
 
 ### Opdatering af `contactContainer`
 
-- **Tip**: Kontaktinformationen skal vises i en række, så brug `flexDirection` til at placere elementerne vandret.
-- **Opgave**: Sørg for, at `contactContainer` bruger `flexDirection`, og juster hvordan elementerne skal fylde rummet ved at bruge `flex` egenskaben.
+- **Opgave**: Kontaktinformationen skal vises i en række, så brug `flexDirection` til at placere elementerne vandret.
+- **Tip**: Sørg for, at `contactContainer` bruger `flexDirection`, og juster hvordan elementerne skal fylde rummet ved at bruge `flex` egenskaben.
 
 ### Opdatering af `infoContainer`, `pictureContainer` og `textContainer`
 
-- **Tip**: Vi vil gerne adskille informationen og billedet, så det hele ser pænt og struktureret ud.
-- **Opgave**: Brug `flex` til at bestemme, hvor meget plads hvert element skal tage. Brug også `justifyContent` og `alignItems` til at centrere indholdet vertikalt.
+- **Opgave**: Vi vil gerne adskille informationen og billedet, så det hele ser pænt og struktureret ud.
+- **Tip**: Brug `flex` til at bestemme, hvor meget plads hvert element skal tage. Brug også `justifyContent` og `alignItems` til at centrere indholdet vertikalt.
 
 ### Opdatering af `itemText`
 
-- **Tip**: Teksten skal være letlæselig, med en passende skrifttype og farve.
-- **Opgave**: Brug `fontSize`, `fontWeight`, `fontFamily` og `color` til at give teksten et professionelt udseende.
+- **Opgave**: Teksten skal være letlæselig, med en passende skrifttype og farve.
+- **Tip**: Brug `fontSize`, `fontWeight`, `fontFamily` og `color` til at give teksten et professionelt udseende.
 
 ### Opdatering af `buttonContainer`
 
-- **Tip**: Knapperne skal være nemme at bruge og skal placeres i en vandret linje, med god afstand imellem dem.
-- **Opgave**: Brug `justifyContent` for at fordele knapperne jævnt, og sørg for, at `alignItems` er centreret, så knapperne ser pæne og jævne ud. Brug også `flex` og `width` til at placere og styr størrelsen på din knap. 
+- **Opgave**: Knapperne skal være nemme at bruge og skal placeres i en vandret linje, med god afstand imellem dem.
+- **Tip**: Brug `justifyContent` for at fordele knapperne jævnt, og sørg for, at `alignItems` er centreret, så knapperne ser pæne og jævne ud. Brug også `flex` og `width` til at placere og styr størrelsen på din knap. 
 
 ## Ekstra / Udfordring
 
@@ -188,7 +224,7 @@ Du har allerede fået en del grundlæggende styles, men nu skal vi opdatere dem,
 
 <br></br>
 
-# Styling af ProfileScreen ( ° ͜ʖ °)
+# Styling af ProfileScreen 
 
 I denne del af opgaven skal vi arbejde videre med styling af din **ProfileScreen**. Du har allerede fået nogle grundlæggende styles, men nu vil vi forbedre designet for at få et mere professionelt og brugervenligt udseende.
 
@@ -280,9 +316,9 @@ Til sidst skal vi style knap-containeren, som i øjeblikket har en gul baggrund.
 
 <br></br>
 
-# Styling af ButtonComponent (Ó_#)ò=(°□°ò)
+# Styling af ButtonComponent
 
-Du har nok lagt mærke til at der er knapper på de forskellige screens som stadig ser lidt forkert ud. De skal vi nu til at style ved at style vores komponenter.
+Du har nok lagt mærke til at der er knapper på de forskellige screens, som stadig ser lidt forkert ud. De skal vi nu til at style ved at style vores komponenter.
 
 I denne del skal vi opdatere dem, så de ser mere moderne og interaktive ud.
 
@@ -305,7 +341,7 @@ Ligesom før, åben dit `ButtonComponent.js` og se hvordan de forskellige styles
         - **shadowRadius**: Bestemmer, hvor bred skyggen skal være.
 
 ### 4. **borderWidth og borderColor**
-   - Bruges til at give knapperne en kant. Kanten kan være i en anden farve end knappen selv og tilføjer et flot visuelt element til designet.
+   - Bruges til at give knapperne en kant. Kanten kan være i en anden farve end knappen selv, hvilket tilføjer et flot visuelt element til designet.
         - **borderWidth**: Bestemmer tykkelsen af kanten.
         - **borderColor**: Bestemmer farven på kanten.
 
@@ -377,7 +413,7 @@ Du har allerede en grundlæggende style i din **GlobalStyles.js** fil, men nu vi
 
 <br></br>
 
-# Styling af TextInput og Pircture  |ʘ‿ʘ)╯
+# Styling af TextInput og Picture 
 
 I denne del af opgaven skal vi arbejde med at style tekstinput og billeder i din app. Vi vil opdatere styles for både **TextInputComponent** og **PictureComponent** for at give dem et rent og moderne udseende.
 
@@ -410,7 +446,7 @@ I din **GlobalStyles.js** har du allerede en grundlæggende style for din **Text
     ```
 
 2. **Opgave**:
-    - Opdater `inpLabel` ved at tilføje en skrifttype og farve. Vi ønsker, at teksten skal være let læselig, men med f.eks. en neutral farve, som ikke stjæler opmærksomheden.
+    - Opdater `inpLabel` ved at tilføje en skrifttype og farve. Vi ønsker, at teksten skal være let læselig med f.eks. en neutral farve, som ikke stjæler opmærksomheden.
     - Brug `fontSize` for at gøre teksten lille og diskret.
     - Tilføj `marginBottom` for at skabe lidt afstand mellem etiketten og selve tekstfeltet.
 
@@ -452,9 +488,9 @@ Nu skal vi style billederne i appen ved at opdatere `picture`-elementet i **Pict
 
 <br></br>
 
-# Styling af Navigation (.__.) ( l: ) ( .-. ) ( :l ) (._.) 
+# Styling af Navigation 
 
-I denne opgave skal vi fokusere på at style navigationen i din app. Du har allerede grundlæggende navigation, men vi vil nu opdatere **App.js** for at tilføje ikoner, skygger og farvetemaer til både tab-bar og header.
+I denne opgave skal vi fokusere på at style navigationen i din app. Du har allerede grundlæggende navigation, men vi vil nu opdatere **App.js** ved at tilføje ikoner, skygger og farvetemaer til både tab-bar og header.
 
 ## Del 1 - Forståelse af navigation-styling
 
@@ -493,18 +529,23 @@ Nu skal du opdatere vores **App.js** for at forbedre udseendet af navigationen.
         },
       })}
     ```
-    - I `headerStyle`, tilføj en baggrund runde hjørner og skygger til headeren.
+    - I `headerStyle`, tilføj en baggrund, runde hjørner og skygger til headeren.
     - Giv titlen i headeren en anden skrifttype med semibold vægt, en farve der matcher din app, og en støre skrift størrelse.
 
 ### Opgave 3 - Style af tabBar
 
 1. Nu skal vi tilpasse udseendet af **tabBar** for at matche resten af appen.
-    - Baggrunden skal være med matchende farve, med runde hjørner og skygge.
+    - Baggrunden skal være en matchende farve, med runde hjørner og skygge.
     - De aktive tabs skal have en hvid farve, og de inaktive tabs skal have en lysere farve.
 
 2. **Opgave**:
     - I `tabBarStyle`, tilføj en farvet baggrund, runde hjørner og skygger.
     - Tilføj `tabBarActiveTintColor` og `tabBarInactiveTintColor` med dine ønskede farver.
+    - **Tip** 
+        ```
+        tabBarActiveTintColor:,
+        tabBarInactiveTintColor:, 
+        ```
 
 ### Opgave 3 - Tilføj ikoner til tabs
 
